@@ -11,31 +11,36 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <a href="#">
-                <img src="logo.png" alt="Riddler logo" height="88px">
-            </a>
-        </div>
-        <div class="navigation">
-            <input type="checkbox" name="" id="" class="toggle-menu">
-            <div class="hamburger">
-
+    <div class="navbar">
+        <header class="header">
+            <div class="logo">
+                <a href="#" class="pages" id="home">
+                    <img src="logo.png" alt="Riddler logo" height="88px">
+                </a>
             </div>
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Create a Riddle</a></li>
-                <li><a href="#">My Riddles</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Sign Up</a></li>
-            </ul>
-        </div>
-    </header>
-    <hr class="separator">
+            <div class="navigation">
+                <input type="checkbox" name="" id="" class="toggle-menu">
+                <div class="hamburger">
 
-    <div>
-        <!--Future content will go here-->
+                </div>
+                <ul class="menu">
+                    <li><a class="pages" id="home" href="#">Home</a></li>
+                    <li><a class="pages" id="create" href="#create">Create a Riddle</a></li>
+                    <li><a class="pages" id="my" href="#my">My Riddles</a></li>
+                    <li><a class="pages" id="login" href="#login">Login</a></li>
+                    <li><a class="pages" id="signup" href="#signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </header>
+        <hr class="separator">
     </div>
+
+    <iframe src="home.html" frameborder="0" id="content" width="100%" height="100%"
+        style="z-index: 0;position: absolute;">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
