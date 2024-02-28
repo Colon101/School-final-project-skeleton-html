@@ -34,7 +34,6 @@ document.addEventListener("focus", handleResize);
 window.addEventListener("load", handleResize);
 document.addEventListener("fullscreenchange", handleResize);
 document.addEventListener("webkitfullscreenchange", handleResize);
-console.log(window.location.hash.slice(1));
 if (window.location.hash.slice(1) !== "") {
   document.getElementById("content").src =
     window.location.hash.slice(1) + ".html";
