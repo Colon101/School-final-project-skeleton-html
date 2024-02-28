@@ -22,6 +22,11 @@
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height:contain;
+        margin-bottom:0;
+    }
+    html{
+        overflow:hidden;
     }
 
     h1 {
@@ -70,7 +75,7 @@
         <form action="" class="riddle-form">
             <div class="form-group">
                 <label for="riddle">Riddle:</label>
-                <input type="text" name="riddle" id="riddleInput" class="form-control">
+                <input type="text" name="riddle" id="riddleInput" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="hint">Hint: (optional)</label>
@@ -78,7 +83,7 @@
             </div>
             <div class="form-group">
                 <label for="answer">Answer:</label>
-                <input type="text" name="answer" id="answerInput" class="form-control">
+                <input type="text" name="answer" id="answerInput" class="form-control" required>
             </div>
             <input type="submit" value="Create" class="btn">
         </form>
