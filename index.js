@@ -19,7 +19,7 @@ document.querySelectorAll(".pages").forEach((page) => {
     hideNav();
   });
 });
-window.addEventListener("resize", () => {
+const handleResize = () => {
   const contentElement = document.getElementById("content");
   const bodyHeight = window.innerHeight;
   const navHeight = document.querySelector(".navbar").offsetHeight;
@@ -27,16 +27,13 @@ window.addEventListener("resize", () => {
   const bodyWidth = window.innerWidth;
   const navWidth = document.querySelector(".navbar").offsetWidth;
   contentElement.style.width = bodyWidth - navWidth - 15 + "px";
-});
-window.addEventListener("load", () => {
-  const contentElement = document.getElementById("content");
-  const bodyHeight = window.innerHeight;
-  const navHeight = document.querySelector(".navbar").offsetHeight;
-  contentElement.style.height = bodyHeight - navHeight - 15 + "px";
-  const bodyWidth = window.innerWidth;
-  const navWidth = document.querySelector(".navbar").offsetWidth;
-  contentElement.style.width = bodyWidth - navWidth - 15 + "px";
-});
+};
+window.addEventListener("resize", handleResize);
+document.addEventListener("mouseenter", handleResize);
+document.addEventListener("focus", handleResize);
+window.addEventListener("load", handleResize);
+document.addEventListener("fullscreenchange", handleResize);
+document.addEventListener("webkitfullscreenchange", handleResize);
 console.log(window.location.hash.slice(1));
 if (window.location.hash.slice(1) !== "") {
   document.getElementById("content").src =
