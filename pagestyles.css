@@ -5,5 +5,5 @@
   box-sizing: border-box;
 }
 html {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
