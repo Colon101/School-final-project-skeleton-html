@@ -14,9 +14,9 @@ function hideNav() {
 }
 document.querySelectorAll(".pages").forEach((page) => {
   page.addEventListener("click", () => {
-    page.id = page.id === "homeIcon" ? "home" : page.id;
+    pageid = page.id === "homeIcon" ? "home" : page.id;
     const contentElement = document.getElementById("content");
-    contentElement.src = page.id + ".html";
+    contentElement.src = pageid + ".html";
     hideNav();
   });
 });
