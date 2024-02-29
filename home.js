@@ -1,8 +1,30 @@
 function createRiddle(question, answer, hint) {
     const questionLi = document.createElement("li");
-    const hintLink = hint ? `<a href="#" onclick="alert('${hint}')">hint</a> | ` : '';
-    const answerLink = `<a href="#" onclick="alert('${answer}')">answer</a>`;
-    questionLi.innerHTML = `<p>${question} | ${hintLink}${answerLink}</p>`;
+    const questionText = document.createElement("p");
+    questionText.textContent = `${question} | `;
+    
+    if (hint) {
+        const hintLink = document.createElement("a");
+        hintLink.href = "#";
+        hintLink.textContent = "hint";
+        hintLink.onclick = function() {
+            alert(hint);
+            return false;
+        };
+        questionText.appendChild(hintLink);
+        questionText.appendChild(document.createTextNode(" | "));
+    }
+
+    const answerLink = document.createElement("a");
+    answerLink.href = "#";
+    answerLink.textContent = "answer";
+    answerLink.onclick = function() {
+        alert(answer);
+        return false;
+    };
+
+    questionText.appendChild(answerLink);
+    questionLi.appendChild(questionText);
     document.getElementById("Riddles").appendChild(questionLi);
 }
 
@@ -18,17 +40,17 @@ createRiddle(
 );
 createRiddle(
     "I sit in the corner while traveling around the world. What am I?",
-    "I’m a postage stamp!",
+    "Iâ€™m a postage stamp!",
     "Mail"
 )
 createRiddle(
     "How many sides does a circle have?",
-    "Two – one inside and one outside!",
+    "Two â€“ one inside and one outside!",
     "Perspective"
 )
 createRiddle(
     "What do silk and grass have in common?",
-    "They’re both sold by the yard!"
+    "Theyâ€™re both sold by the yard!"
 )
 createRiddle(
     "If you know me, you'll want to share me. If you share me, Ill be gone. What am I?",
